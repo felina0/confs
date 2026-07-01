@@ -59,6 +59,7 @@ abbr grugai "dragon-drop $HOME/sync/ai/GRUG.md"
 abbr ga 'git add'
 abbr gr 'git rebase'
 abbr gc 'git commit'
+abbr gcw 'git commit-with-claude'
 abbr gch 'git checkout'
 abbr gchr 'git cherry-pick'
 abbr gs '_fzf_search_git_status || git status'
@@ -81,22 +82,22 @@ abbr kex 'kubectl exec'
 abbr kpf 'kubectl port-forward'
 abbr krr 'correct-kubernetes-cluster.sh && kubectl rollout restart'
 
-set still_working_at_powerflex true  # The economic realities of 2022-.
-abbr ff 'cd ~/pf && cd ~/pf/powerflex_edge_traffic_manager && source venv/bin/activate.fish'
 abbr app 'cd ~/pf && cd ~/pf/driver_experience'
+abbr ax 'cd ~/pf && cd ~/pf/powerflex_cloud_customer_portal && nvm use lts'
 abbr cs 'cd ~/pf && cd ~/pf/powerflex_edge_ocpp_central_system && source venv/bin/activate.fish'
-abbr ev 'cd ~/pf && cd ~/pf/pfc_ev'
 abbr devman 'cd ~/pf && cd ~/pf/powerflex_cloud_edge_device_manager'
+abbr ev 'cd ~/pf && cd ~/pf/pfc_ev'
+abbr ff 'cd ~/pf && cd ~/pf/powerflex_edge_traffic_manager && source venv/bin/activate.fish'
+abbr ful 'cd ~/pf && ~/pf/pfc_fulfillment_api'
+abbr natsinfra 'cd ~/pf && cd ~/pf/pfc_nats_infrastructure/'
+abbr pfapi 'cd ~/pf && ~/pf/powerflex_api && source venv/bin/activate.fish'
 abbr scale 'cd ~/pf && cd ~/pf/scale'
 abbr scalepass 'cd ~/pf && cd ~/pf/scale/powerflex_cloud_nexus_password_management'
 abbr sites 'cd ~/pf && cd ~/pf/scale/powerflex_cloud_nexus_sites'
-abbr uplo 'cd ~/pf && ~/pf/pfc_site_uploader'
-abbr uplob 'cd ~/pf && ~/pf/pfc_site_uploader/site-uploader/ && venv/bin/activate.fish'
-abbr uplof 'cd ~/pf && ~/pf/pfc_site_uploader/*front*/'
 abbr uplo2 'cd ~/pf && ~/pf/pfc_site_uploader2'
-abbr pfapi 'cd ~/pf && ~/pf/powerflex_api && source venv/bin/activate.fish'
-abbr natsinfra 'cd ~/pf && cd ~/pf/pfc_nats_infrastructure/'
-abbr ax 'cd ~/pf && cd ~/pf/powerflex_cloud_customer_portal && nvm use lts'
+abbr uplob 'cd ~/pf && ~/pf/pfc_site_uploader/site-uploader/'
+abbr uplo 'cd ~/pf && ~/pf/pfc_site_uploader'
+abbr uplof 'cd ~/pf && ~/pf/pfc_site_uploader/*front*/'
 
 # Docker shortcuts
 abbr dcls 'docker container ls'
@@ -180,7 +181,8 @@ if status is-interactive
 
   command -v starship > /dev/null && starship init fish | source
 
-  command -v pyenv > /dev/null && pyenv init - fish | source
+  # WHYYYYYYYYYYY
+  # command -v pyenv > /dev/null && pyenv init - fish | source
 
   # Gold
   if ! grep PatrickF1/fzf.fish ~/.config/fish/fish_plugins >/dev/null && command -v fzf 2>&1 >/dev/null
@@ -194,7 +196,8 @@ if status is-interactive
   command -v rbenv 2>&1 >/dev/null && rbenv init - --no-rehash fish | source
 
   # Load SSH keys last so user can ctrl-c, timeout after 14 hours
-  command -v keychain > /dev/null 2>&1 && eval (keychain --quick --timeout 840 --eval -Q --quiet (ls ~/.ssh/*.pub | sed s/.pub//g))
+  # command -v keychain > /dev/null 2>&1 && eval (keychain --quick --timeout 840 --eval -Q --quiet (ls ~/.ssh/*.pub | sed s/.pub//g))
+  command -v keychain > /dev/null 2>&1 && eval (keychain --quick --timeout 840 --eval -Q --quiet id_ed25519_felina0)
 end
 
 function install_plugin_manager
