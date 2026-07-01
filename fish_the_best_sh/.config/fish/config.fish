@@ -91,6 +91,7 @@ abbr ff 'cd ~/pf && cd ~/pf/powerflex_edge_traffic_manager && source venv/bin/ac
 abbr ful 'cd ~/pf && ~/pf/pfc_fulfillment_api'
 abbr natsinfra 'cd ~/pf && cd ~/pf/pfc_nats_infrastructure/'
 abbr pfapi 'cd ~/pf && ~/pf/powerflex_api && source venv/bin/activate.fish'
+abbr sc 'cd ~/pf && cd ~/pf/pfc_ev/site-config'
 abbr scale 'cd ~/pf && cd ~/pf/scale'
 abbr scalepass 'cd ~/pf && cd ~/pf/scale/powerflex_cloud_nexus_password_management'
 abbr sites 'cd ~/pf && cd ~/pf/scale/powerflex_cloud_nexus_sites'
@@ -147,6 +148,10 @@ function makeanywhere --wraps make --description "makeanywhere --wraps make make
 end
 function pma --wraps make --description "pma --wraps make pipenv run makeanywhere"
   python -m pipenv run makeanywhere $argv
+end
+# devcontainer up ; devcontainer exec gcloud auth login ; dmake setup
+function dmake --wraps make --description "dmake --wraps make devcontainer exec make"
+  devcontainer exec make $argv
 end
 
 set_global CUSTOM_CURL_WRAPPER (command -v curl_device_manager.sh)
