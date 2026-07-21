@@ -18,4 +18,7 @@ tryalias trizen 'trizen --flip-results=1'
 
 tryalias gameoflifeff 'ffplay -f lavfi -i life=death_color=red:life_color=black:mold_color=white:r=60:rule=B36/S23:ratio=0.7'
 
+tryalias curl_nc 'curl -H "X-ECM-API-ID: $(pass show powerflex_get_jwt.sh__env_prd/netcloud_token_id)" -H "X-ECM-API-KEY: $(pass show powerflex_get_jwt.sh__env_prd/netcloud_token_secret)" -H "X-CP-API-ID: $(pass show powerflex_get_jwt.sh__env_prd/cp_api_id)" -H "X-CP-API-KEY: $(pass show powerflex_get_jwt.sh__env_prd/cp_api_key)"'
+
 #### Most aliases are now only found as Fish abbreviations
+

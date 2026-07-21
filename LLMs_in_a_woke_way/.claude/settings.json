@@ -1,8 +1,13 @@
 {
+  "model": "claude-fable-5[1m]",
   "statusLine": {
     "type": "command",
     "command": "$HOME/.claude/set_terminal_title.sh"
   },
-  "voiceEnabled": true,
-  "model": "opus"
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "theme": "dark-daltonized",
+  "agentPushNotifEnabled": true,
+  "voiceEnabled": true
 }

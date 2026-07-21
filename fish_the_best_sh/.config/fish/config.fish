@@ -39,6 +39,7 @@ abbr em 'emacs -nw'
 abbr emc 'emacsclient -nw --alternate-editor=""'
 abbr z 'zeditor $(projectroot.sh)'
 abbr rsync 'rsync -rh --info=progress2'
+abbr nats 'docker run -v $HOME:$HOME --net host natsio/nats-box:latest nats --creds='
 
 # Python and Scientific commands
 abbr py python3
@@ -83,6 +84,7 @@ abbr kpf 'kubectl port-forward'
 abbr krr 'correct-kubernetes-cluster.sh && kubectl rollout restart'
 
 abbr app 'cd ~/pf && cd ~/pf/driver_experience'
+abbr aiv2 'cd ~/pf && cd ~/pf/powerflex_edge_asset_interface_v2'
 abbr ax 'cd ~/pf && cd ~/pf/powerflex_cloud_customer_portal && nvm use lts'
 abbr cs 'cd ~/pf && cd ~/pf/powerflex_edge_ocpp_central_system && source venv/bin/activate.fish'
 abbr devman 'cd ~/pf && cd ~/pf/powerflex_cloud_edge_device_manager'
@@ -151,6 +153,7 @@ function pma --wraps make --description "pma --wraps make pipenv run makeanywher
 end
 # devcontainer up ; devcontainer exec gcloud auth login ; dmake setup
 function dmake --wraps make --description "dmake --wraps make devcontainer exec make"
+  devcontainer up && \
   devcontainer exec make $argv
 end
 
@@ -173,7 +176,7 @@ set fzf_fd_opts --hidden --exclude=.git  # list hidden files when searching with
 debug Set fzf options
 
 if status is-interactive
-  [ -n "$DISPLAY" ] && xset r rate 77 39
+  [ -n "$DISPLAY" ] && xset r rate 180 80
   debug Set keyboard rate
   [ -n "$DISPLAY" ] && max-mic.sh 2>&1 >/dev/null &
   debug Set audio
