@@ -2,11 +2,11 @@
 # example: curl
 COMMAND="$1"
 
-# example: ~/tmp/command-cache
-CACHE_LOCATION="$2"
-
 # all times are in seconds
-TIME_TILL_NULL="$3"
+TIME_TILL_NULL="$2"
+
+# example: ~/tmp/command-cache
+CACHE_LOCATION="${3:-$(mktemp)}"
 
 # store old output in tmp/screenfetch-cached-output.EPOCHTIME
 TMP="$(dirname $CACHE_LOCATION)"
@@ -19,6 +19,8 @@ if [ $TIME_NOW -ge $(( $TIME_CACHE + $TIME_TILL_NULL )) ]; then
   mkdir -p "$TMP"
   NEW_OUT="$CACHE_LOCATION-$TIME_NOW"
   bash -c "$COMMAND" | tee "$NEW_OUT"
+  # don't cache a failed command (would poison cache for the whole TTL)
+  [ "${PIPESTATUS[0]}" -eq 0 ] || rm -f "$NEW_OUT"
 else
   cat "$CACHE"
 fi
