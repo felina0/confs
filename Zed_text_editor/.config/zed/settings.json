@@ -47,12 +47,14 @@
     "tool_permissions": {
       "default": "allow"
     },
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "default_profile": "write",
     "default_model": {
       // use local ollama model for assistant
-      "provider": "copilot_chat",
-      "model": "claude-opus-4.7",
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "zed.dev",
+      "model": "claude-sonnet-5",
     },
   },
   "language_models": {
