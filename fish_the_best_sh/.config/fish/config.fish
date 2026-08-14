@@ -31,8 +31,8 @@ abbr site "cd ~/src/felina.art || git clone git@github.com:felina0/felina.art ~/
 abbr mcr 'make commitready'
 abbr gdbb "gdb -ex run --args"
 abbr o "ollama.sh run $DEFAULT_OLLAMA_MODEL --"
-abbr l 'ls -F -a'
-abbr ll 'ls -F -a -l -h'
+abbr l 'ls -Fa'
+abbr ll 'ls -Flha'
 abbr e evince   # alternatives: 'zathura --fork' mupdf mupdf-x11 qpdfview 'wine READER10.exe'
 abbr MONKEY 'echo MONKEY'
 abbr em 'emacs -nw'
