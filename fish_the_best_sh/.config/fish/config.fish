@@ -32,7 +32,7 @@ abbr mcr 'make commitready'
 abbr gdbb "gdb -ex run --args"
 abbr o "ollama.sh run $DEFAULT_OLLAMA_MODEL --"
 abbr l 'ls -Fa'
-abbr ll 'ls -Flha'
+abbr ll 'ls -lah -F'
 abbr e evince   # alternatives: 'zathura --fork' mupdf mupdf-x11 qpdfview 'wine READER10.exe'
 abbr MONKEY 'echo MONKEY'
 abbr em 'emacs -nw'
@@ -205,7 +205,7 @@ if status is-interactive
 
   # Load SSH keys last so user can ctrl-c, timeout after 14 hours
   # command -v keychain > /dev/null 2>&1 && eval (keychain --quick --timeout 840 --eval -Q --quiet (ls ~/.ssh/*.pub | sed s/.pub//g))
-  command -v keychain > /dev/null 2>&1 && eval (keychain --quick --timeout 840 --eval -Q --quiet id_ed25519_felina0)
+  command -v keychain > /dev/null 2>&1 && keychain --eval --quick --timeout 840 --eval -Q --quiet id_ed25519_felina0 >/dev/null
 end
 
 function install_plugin_manager

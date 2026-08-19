@@ -257,7 +257,7 @@ end
 
 -- PURTT COLORS
 purty_colors_now = function(a, b, c, d)
-    local light_mode = false
+    local light_mode = true
     if light_mode then
         -- vis:command('set theme light-16')
         return null
@@ -274,7 +274,9 @@ vis.events.subscribe(vis.events.WIN_OPEN, purty_colors_now)
 vis.events.subscribe(vis.events.INIT, function()
     local user_lexers = os.getenv('HOME') .. '/.config/vis/lexers'
     local prop = vis.lexers.property
-    prop['scintillua.lexers'] = user_lexers .. ';' .. prop['scintillua.lexers']
+    if prop then
+        prop['scintillua.lexers'] = user_lexers .. ';' .. prop['scintillua.lexers']
+    end
 end)
 
 -- Org-mode styles missing from or overriding the default theme.

@@ -1,5 +1,5 @@
 #!/bin/sh
-set -euo pipefail
+set -eu
 PROCESSOR="cat"
 if command -v pv >/dev/null 2>&1; then
     PROCESSOR="pv --bytes --timer"
