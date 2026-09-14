@@ -43,6 +43,12 @@
     "enabled_in_text_threads": false,
   },
   "agent": {
+    "sandbox_permissions": {
+      "network_hosts": [
+        "registry.yarnpkg.com",
+        "registry.npmjs.org"
+      ]
+    },
     "dock": "right",
     "tool_permissions": {
       "default": "allow"
@@ -51,10 +57,10 @@
     "default_profile": "write",
     "default_model": {
       // use local ollama model for assistant
-      "effort": "high",
+      "effort": "xhigh",
       "enable_thinking": true,
-      "provider": "zed.dev",
-      "model": "claude-sonnet-5",
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-terra",
     },
   },
   "language_models": {

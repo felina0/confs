@@ -2,6 +2,8 @@
 # For example: `tryalias v vim vis nvim` will attempt to alias v to vim if it exists, vis, or nvim in that order.
 # tryalias is a custom function implemented separately for the Fish and Bash shells.
 
+tryalias ssh 'TERM=xterm /usr/bin/ssh'
+
 tryalias ppass pass
 tryalias youtube-dl yt-dl
 tryalias o 'ollama.sh run "$DEFAULT_OLLAMA_MODEL"'
