@@ -85,6 +85,7 @@ abbr krr 'correct-kubernetes-cluster.sh && kubectl rollout restart'
 
 abbr app 'cd ~/pf && cd ~/pf/driver_experience'
 abbr aiv2 'cd ~/pf && cd ~/pf/powerflex_edge_asset_interface_v2'
+abbr cec 'cd ~/pf && cd ~/pf/powerflex_cloud_ems_configuration'
 abbr ax 'cd ~/pf && cd ~/pf/powerflex_cloud_customer_portal && nvm use lts'
 abbr cs 'cd ~/pf && cd ~/pf/powerflex_edge_ocpp_central_system && source venv/bin/activate.fish'
 abbr devman 'cd ~/pf && cd ~/pf/powerflex_cloud_edge_device_manager'

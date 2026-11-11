@@ -224,6 +224,7 @@ copy_confs_for utils \
   bin/speedtest-info.sh \
   bin/mem.sh \
   bin/cpu.sh \
+  bin/splitter.sh \
   twin-city-time.sh \
   bin/open-starlink.html
 
