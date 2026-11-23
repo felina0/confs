@@ -217,6 +217,7 @@ copy_confs_for git \
     bin/git-show-commits-not-in-branch.sh bin/git-remove-branches-gone-in-remote.sh bin/git-push-new-branch.sh bin/gitdiff.sh .git-template/HEAD
 
 copy_confs_for utils \
+  bin/quiet-fans.sh \
   bin/cpufreq.sh bin/systemload.sh bin/screenshot.sh bin/screenshot-select.sh bin/pip-update-outdated.sh \
   .xsession \
   bin/notification-sound.sh \

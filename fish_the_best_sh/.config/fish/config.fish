@@ -31,7 +31,7 @@ abbr site "cd ~/src/felina.art || git clone git@github.com:felina0/felina.art ~/
 abbr mcr 'make commitready'
 abbr gdbb "gdb -ex run --args"
 abbr o "ollama.sh run $DEFAULT_OLLAMA_MODEL --"
-abbr l 'ls -Fa'
+abbr l 'ls -F -ha'
 abbr ll 'ls -F -lha'
 abbr e evince   # alternatives: 'zathura --fork' mupdf mupdf-x11 qpdfview 'wine READER10.exe'
 abbr MONKEY 'echo MONKEY'
@@ -102,6 +102,7 @@ abbr uplo2 'cd ~/pf && ~/pf/pfc_site_uploader2'
 abbr uplob 'cd ~/pf && ~/pf/pfc_site_uploader/site-uploader/'
 abbr uplo 'cd ~/pf && ~/pf/pfc_site_uploader'
 abbr uplof 'cd ~/pf && ~/pf/pfc_site_uploader/*front*/'
+abbr casc 'cd ~/pf && ~/pf/chargepilot-evapcp-optimizer/ && nvm use lts'
 
 # Docker shortcuts
 abbr dcls 'docker container ls'

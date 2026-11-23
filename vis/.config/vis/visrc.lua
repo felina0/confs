@@ -65,7 +65,7 @@ end)
 vis.events.subscribe(vis.events.WIN_OPEN, function(win)
     -- Per window configuration options.
     vis:command('set shell sh') -- a barebones shell that should have no extra config/outputs
-    vis:command('set number')
+    vis:command('set numbers on')
     vis:command('set autoindent')
     vis:command('set cursorline on')
     -- TODO only ignore case if search string is all lowercase
